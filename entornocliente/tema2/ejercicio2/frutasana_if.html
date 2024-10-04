@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Fruta Sana</title>
+  </head>
+  <body>
+    <input id="myInput2" type="text" value="fruta" />
+    <button onclick="checkFruit2()">comprobar la fruta</button>
+    <p id="demo2"></p>
+    <script>
+      function checkFruit2() {//hacemos las mismas sentencias con sentencias if
+        var texto2;//inicializamos texto2
+        var frutas = document.getElementById("myInput2").value;//frutas tiene el valor de la etiqueta myinput2 
+        if (frutas == "platano") {
+          texto2 = "el platano esta rico";
+        }else
+        if ((frutas == "arandano")) {
+          texto2 = "el arandano esta rico";
+        }else
+        if ((frutas == "uva")) {
+          texto2 = "la uva esta rica";
+        }else
+        if ((frutas == "manzana")) {
+          texto2 = "la manzana esta rica";
+        }else{
+            texto2="nunca he visto esa fruta"//si ninguna de las frutas es mencionada , nos da un mesaje predeterminado
+        }
+        document.getElementById("demo2").innerHTML = texto2;
+      }
+    </script>
+  </body>
+</html>
