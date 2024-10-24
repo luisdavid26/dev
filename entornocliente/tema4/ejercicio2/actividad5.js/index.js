@@ -11,7 +11,7 @@ import {
 // Array para almacenar las notas introducidas
 let notas = [];
 while (true) {
-  let input = prompt("Introduce una nota o varias separadas por comas");
+  let input = prompt("introduce una nota o varias pero separadas por comas");
   if (input === null) {
     break;
   }

@@ -26,8 +26,8 @@ export function notaMedia(notas) {
 export function cambiaNotas(notas, incremento) {
   return notas.map((nota) => {
     //realizamos el incremento que pasa el usuario
-    const nuevaNota = Math.round(nota + nota * (incremento / 100));
+    const notanueva = Math.round(nota + nota * (incremento / 100));
     //si la nota con el incrento es mayor a 10 , la dejaremos en 10 
-    return nuevaNota > 10 ? 10 : nuevaNota;
+    return notanueva > 10 ? 10 : notanueva;
   });
 }

@@ -38,7 +38,7 @@ function contar() {
     arraycont[num]++;
   });
   arraycont.forEach((contador, num) => {
-    console.log("El numero "+num+" aparece "+contador+"veces");
+    console.log("El numero "+num+" aparece "+contador+" veces");
   });
 }
 
