@@ -17,11 +17,7 @@ function obtenerRimas(palabra) {
 }
 function eliminarRima(palabra,rima) {
     if (diccionario.has(palabra)&&diccionario.has(rima)) {
-        diccionario.delete(palabra,{
-            diccionario.has(palabra).forEach(rima => {
-            diccionario.delete(rima)
-            })
-        });
+        diccionario.delete(palabra);
       } else {
         print(`la palabra ${palabra} no existe en el direcionario`);
     }

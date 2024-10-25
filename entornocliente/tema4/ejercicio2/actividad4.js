@@ -8,15 +8,14 @@ const array = [
 
 function ordenadonorm() {
   let arrayb = Array.from(array);
-
+//ordenamos el array de mayor a menor
   arrayb.sort(function (a, b) {
     return a - b;
   });
-  //array ordenado
   console.log(arrayb);
 }
 
-function impares() {
+function impares() {// ordenamos el array pero solo los numeros que sean impares
   let arrabimpar = Array.from(array);
   //array ordenado por impares
   let imparesordenado = arrabimpar
@@ -24,7 +23,7 @@ function impares() {
     .sort((a, b) => a - b);
   console.log(imparesordenado);
 }
-function imparesdos() {
+function imparesdos() {// ordenamos el array pero solo los impares y que sean mayor a 10 , ya que tienen que sea mas de dos cifras
   let arrabimpardos = Array.from(array);
   let impardos = arrabimpardos.filter(
     (num) => num % 2 !== 0 && num >= 10 && num < 100
@@ -32,13 +31,26 @@ function imparesdos() {
   console.log(impardos);
 }
 function contar() {
-  let arraycont = new Array(101).fill(0);
+  let numeros = [];
+  let contadores = [];
 
   array.forEach((num) => {
-    arraycont[num]++;
+    //buscamos si en el array ya esta en el array
+    let index = numeros.indexOf(num);
+
+    if (index === -1) {
+      //si no esta , lo anyadimos en el array
+      numeros.push(num);
+      contadores.push(1);
+    } else {
+      //si esta el numero en el array , aumentamos el contador
+      contadores[index]++;
+    }
   });
-  arraycont.forEach((contador, num) => {
-    console.log("El numero "+num+" aparece "+contador+" veces");
+
+  //mostramos cada numero y el numero de veces que esta en el array
+  numeros.forEach((num, i) => {
+    console.log(`El numero ${num} aparece ${contadores[i]} veces`);
   });
 }
 

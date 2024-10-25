@@ -8,7 +8,7 @@ import {
   cambiaNotas,
 } from "./function.js";
 
-// Array para almacenar las notas introducidas
+//almacenos las notas , depende si mete una a una , si mete varias tiene que ser por coma
 let notas = [];
 while (true) {
   let input = prompt("introduce una nota o varias pero separadas por comas");

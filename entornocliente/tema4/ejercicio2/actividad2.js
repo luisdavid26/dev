@@ -7,15 +7,15 @@ const ciudades = [
 ];
 let itemsmay;
 function poblacionmayor(numusu) {
-  itemsmay = ciudades.filter((ciudades) => ciudades.poblacion > numusu);
+  itemsmay = ciudades.filter((ciudades) => ciudades.poblacion > numusu);//filtramos las ciudades que tengan una poblacion mayor a la que dijo el usuario
   if (itemsmay.length > 0) {
-    console.log(itemsmay.nombre);
+    console.log(itemsmay.nombre);//mostramos las cuidades
   } else {
     console.log("no hay ciudades con una poblacion mayor");
     return;
   }
 }
-
+//pedimos el numero al usuario
 let numusuarios = parseInt(prompt("dime un numero "));
 
 poblacionmayor(numusuarios);
