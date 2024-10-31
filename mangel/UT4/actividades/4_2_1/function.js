@@ -1,14 +1,15 @@
 function artistasSolistas(artistas) {
-
-    return artistas.filter( == true);
+    return artistas.filter((artista) => artista.solista);
 }
 
-function artistasPorEdad() {
-    
+function artistasPorEdad(edad, artistas) {
+    return artistas.filter((artista) => artista.edad == edad);
 }
 
-function cantidadDeArtistasPorInstrumento() {
-    
+function cantidadDeArtistasPorInstrumento(artistas) {
+    return artistas.reduce(((contador, artista) => {
+        
+    }));
 }
 
 function cantidadDeArtistasPorGenero() {
