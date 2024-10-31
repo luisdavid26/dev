@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numeroSecreto = ~~(Math.random() * 11);
+        let numeroAdivinar = prompt("Adivina un numero entre el 0 y 10");
+        let ganar = false;
+
+        while (!ganar) {
+            if (numeroAdivinar == null) {
+                alert("Has cancelado el juego gracias por jugar");
+                ganar = true;
+            }else if (numeroAdivinar > numeroSecreto) {
+                numeroAdivinar = prompt("Ese numero es demasiado grande. Prueba otra vez");
+                ganar = false;
+            } else if(numeroAdivinar < numeroSecreto) {
+                numeroAdivinar = prompt("Ese numero es demasiado pequeño. Prueba otra vez");
+                ganar = false;
+            } else if (numeroAdivinar == numeroSecreto){
+                alert("Muy bien el numero secreto era " + numeroSecreto);
+                ganar = true;
+            } else if (numeroAdivinar < 0 && numeroAdivinar > 10) {
+                numeroAdivinar = prompt("Ese numero no es valido, tiene que ser 0-10");
+            }
+        }
+    </script>
+</body>
+</html>

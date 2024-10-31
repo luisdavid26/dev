@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numero1 = 7;
+        let numero2 = 2;
+
+        // 1.Aritmetico 
+        //Suma
+        console.log(numero1 + " + " + numero2 + " = " + (numero1+numero2)); 
+
+        // 2.Asignacion
+        //Suma el numero2 al uno directamente equitativo a numero1 = numero1 + numero2
+        numero1 += numero2;
+        console.log("x += y -> x = " + numero1);
+
+        // 3. Operadores de cadena
+        let nombre = "Mnagel";
+        let apellido = "Vera";
+        //Concatenas es la cadena las variables nombre y apellido
+        console.log("Nombre y apellido:" + nombre + " " + apellido);
+
+        // 4. Operadores de comparación
+        //Compara si las variables son iguales
+        console.log("Son iguales " + numero1 + " y " + numero2 + "? -> " + (numero1 == numero2));
+
+        // 5. Operadores logicos
+        //Comprueba que las variables sean mayor de 0 y si las dosd son correctas devuelve true
+        console.log("Son positivos " + numero1 + " y " + numero2 +  "? -> " + (numero1 > 0 && numero2 > 0));
+
+        // 6. Operadores bitwise
+        //operador XOR devuelve uno si ambas variables son distintas
+        console.log("Si los numeros " + numero1 + " y " + numero2 + "son distintos dara 1 -> " + (numero1 ^ numero2));
+
+    </script>
+</body>
+</html>

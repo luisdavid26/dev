@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let multiplicacion = (repeticion, numero) => {
+            let resultado = [];
+            resultado.unshift(numero);
+
+            for (let i = 0; i < repeticion; i++) {
+                numero = numero * 2;
+                resultado.push(numero);
+            }
+            return resultado;
+        }
+
+        let repeticiones = prompt("Dame un numero que sera las veces que se repita");
+        repeticiones -= 1;
+        let numero = prompt("Dame un numero que sera el que se muestre");
+        let resultado = multiplicacion(repeticiones, numero);
+        let cadena = resultado.join(" ,");
+        alert("la cadena devuelta es " + cadena);
+    </script>
+</body>
+</html>

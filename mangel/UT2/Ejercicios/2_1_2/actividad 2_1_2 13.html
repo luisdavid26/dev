@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let simbolo = prompt("Escribe un simbolo y hare una figura");//aqui le pediremos al usuario un simbolo y lo guardaremos en una variable 
+        let contador = 0;//esta variable numeriaca es un contador que nos cortara el while cunado necesitemos
+        let patron = '';//este string sera el que hiremos mostrando en consola
+
+        while (contador < 10) {//este bucle añade al patron un simbolo por repeticion y muestra la variable patron por consola
+            patron += simbolo;
+            console.log(patron);
+            contador ++;
+        }
+    </script>
+</body>
+</html>

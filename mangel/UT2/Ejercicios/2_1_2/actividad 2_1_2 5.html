@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Le pedimos al usuario por prompt las notas y como nos detectara como string las transformamos en inta
+        let notas = parseInt(prompt("Dame tu primera nota"));
+        notas += parseInt(prompt("Dame tu segunda nota"));
+        notas += parseInt(prompt("Dame tu tercera nota"));
+        //Ya que las variables son int hemos podido sumarlas y ahora las dividimos
+        let media = notas / 3;
+        //En este if comrpbaremos si la media es mayor o menso que cinco 
+        if (media >= 5) {
+            alert("Estas aprobado con un " + media);
+        } else {
+            alert("Estas suspenso con un " + media);
+        }
+    </script>
+</body>
+</html>

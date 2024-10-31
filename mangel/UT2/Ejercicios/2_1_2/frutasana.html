@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Fruta Sana</title>
+    </head>
+    <body>
+        <input id="myInput" type="text" value="Tutti Frutti">
+        <button onclick="checkFruit()">Check Fruit</button>
+        <p id="demo"></p>
+        <script>
+            function checkFruit() {
+                var text;
+                var fruits = document.getElementById("myInput").value;
+                if (fruits == "Banana") {
+                    text = "Banana is good!";
+                }else if (fruits == "Orange") {
+                    text = "I am not a fan of orange.";
+                }else if (fruits == "Apple") {
+                    text = "How you like them apples?";
+                }else {
+                    text = "Nunca he visto esa fruta";
+                }
+                document.getElementById("demo").innerHTML = text;
+            }
+        </script>
+    </body>
+</html>

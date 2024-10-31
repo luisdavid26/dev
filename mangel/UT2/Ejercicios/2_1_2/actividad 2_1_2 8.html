@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let comida = prompt("Que menu escogera: Carne, Pescado o Verdura?"); //Le pedimos al usuario la comida a elegir
+        let bebida;
+        switch (comida) { //cada case corresponde a una bebida distinta
+            case "Carne":
+                bebida = "Vino tinto";
+                break;
+        
+            case "Pescado":
+                bebida = "Vino blanco";
+                break;
+
+            case "Verdura":
+                bebida = "Agua";
+                break;
+
+            default://Si introduce una comida fuera del menu saltara el error
+                console.error("Escriba carne, pescado o verdura.");
+                break;
+        }
+        if (bebida != null) {
+            alert("La mejor bebida para " + comida + " es: " + bebida );
+        }
+    </script>
+</body>
+</html>

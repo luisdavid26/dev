@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Ejercicio 7
+        let mesNumero = prompt("Dime un numero del 1-12 y te dire el mes"); //Le pedimos al usuario un numero entre el 1-12
+        let mes;
+        switch (mesNumero) { //cada case corresponde a un mes distinto
+            case '1':
+                mes = "Enero";
+                break;
+        
+            case '2':
+                mes = "Febrero";
+                break;
+
+            case '3':
+                mes = "Marzo";
+                break;
+
+            case '4':
+                mes = "Abril";
+                break;
+
+            case '5':
+                mes = "Mayo";
+                break;
+
+            case '6':
+                mes = "Junio";
+                break;
+
+            case '7':
+                mes = "Julio";
+                break;
+
+            case '8':
+                mes = "Agosto";
+                break;
+
+            case '9':
+                mes = "Septiembre";
+                break;
+
+            case '10':
+                mes = "Octubre";
+                break;
+
+            case '11':
+                mes = "Noviembre";
+                break;
+
+            case '12':
+                mes = "Diciembre";
+                break;
+
+            default://Si introduce un numero fuera del rango saltara el error
+                console.error("Ese numero no corresponde a ningun mes");
+                break;
+        }
+        if (mes != null) {
+            alert("El mes correspondiente al número " + mesNumero + " es: " + mes );
+        }
+    </script>
+</body>
+</html>
