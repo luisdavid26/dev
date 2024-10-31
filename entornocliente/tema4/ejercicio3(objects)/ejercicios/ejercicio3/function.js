@@ -12,7 +12,7 @@ export function cantidadDeArtistasPorInstrumento(artistas) {
   }, {});
 }
 export function cantidadDeArtistasPorGenero(artistas) {
-  return artistas.reduce((cont, artista) => {
+  return artista.reduce((cont, artista) => {
     const genero = artista.genero;
     cont[genero] = cont[genero] ? cont[genero] + 1 : 1;
     return cont;
@@ -26,6 +26,13 @@ export function artistaConMasEntradasVendidas(artistas) {
     return artistas.filter(artista=>artista.entradasVendidas&&artista.entradasVendidas.length > entradasVendidas)
     .sort((a,b)=>b.entradasVendidas.length-a.entradasVendidas.length);
 }
-export function artistaConMayorRecaudacion(params) {
+export function artistaConMayorRecaudacion(artistas) {
+  
+}
+export function artistasConDiscoEnAnyo(anyo) {
+  
+}
+export function artistaConMasCopias() {
+  
   
 }

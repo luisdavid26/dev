@@ -19,15 +19,14 @@ console.log(`
     \n  2. Mostrar artistas por edad
     \n  3. Cantidad de artistas por instrumento
     \n  4. Cantidad de artistas por género
-    \n  5. Artistas con más discos 
-    \n  6. Artista con más entradas vendidas
-    \n  7. Artista con mayor recaudación
-    \n  8. Artistas con disco en año
+    \n  5. Artistas con mas discos 
+    \n  6. Artista con mas entradas vendidas
+    \n  7. Artista con mayor recaudacion
+    \n  8. Artistas con disco en anyo
     \n  9. Artista con más copias de discos
     \n  0. Salir`);
 // Función principal
-function ejecutarMenu() {
-  let opcion;
+
   do {
     opcion = mostrarMenu();
     switch (opcion) {
@@ -71,7 +70,4 @@ function ejecutarMenu() {
         break;
     }
   } while (opcion !== "0");
-}
 
-// Inicia la ejecución del menú
-ejecutarMenu();
