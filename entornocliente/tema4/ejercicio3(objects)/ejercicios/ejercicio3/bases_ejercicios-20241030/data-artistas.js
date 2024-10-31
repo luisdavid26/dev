@@ -1,4 +1,4 @@
-export const artistas = [
+ const artistas = [
   {
     nombre: 'Ochoa Chang',
     solista: true,
