@@ -1,5 +1,5 @@
 let opcion;
-do {
+do {//mostramos el menu en un propmt
   opcion = prompt(` Elige una opcion:
      1. Mostrar artistas solistas
      2. Mostrar artistas por edad

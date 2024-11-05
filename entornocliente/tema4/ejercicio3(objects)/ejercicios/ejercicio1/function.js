@@ -1,19 +1,19 @@
 let diccionario = new Map();
-export function agregarRima(palabra, rima) {//agreamos rima al mapa con un push y va asociada a la palabra
+ function agregarRima(palabra, rima) {//agreamos rima al mapa con un push y va asociada a la palabra
   if (diccionario.has(palabra)) {
-    diccionario.get(palabra).push(rima);
+    diccionario.get(palabra).push(diccionario.rima);
   } else {
     diccionario.set(palabra, [rima]);
   }
 }
-export function obtenerRimas(palabra) {//buscamos las rimas en el mapa por medio de su palabra
+ function obtenerRimas(palabra) {//buscamos las rimas en el mapa por medio de su palabra
   if (diccionario.has(palabra)) {
-    return diccionario.get(rima);
+    return diccionario.get(diccionario.rima);
   } else {
     print(`la palabra ${palabra} no existe en el direcionario`);
   }
 }
-export function eliminarRima(palabra, rima) {
+ function eliminarRima(palabra, rima) {
   if (diccionario.has(palabra)) { //si existe la palabra 
     const rimas = diccionario.get(palabra).filter((rimaborrar) => rimaborrar !== rimaborrar); //creamos una nueva rima sin esas rimas en especifico
     if (rimas.length > 0) {
@@ -25,8 +25,7 @@ export function eliminarRima(palabra, rima) {
   }
 }
 
-
-export function eliminarPalabra(palabra) {
+ function eliminarPalabra(palabra) {
   if (diccionario.has(palabra)) {
     diccionario.delete(palabra);
   } else {

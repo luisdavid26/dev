@@ -1,10 +1,3 @@
-import {
-  agregarRima,
-  obtenerRimas,
-  eliminarRima,
-  eliminarPalabra
-} from "./function.js";
-
 let prombucle = true;
 while (prombucle) {
   const opcion = prompt(
@@ -35,6 +28,6 @@ while (prombucle) {
       prombucle = false;
       break;
     default:
-      alert("Error, opción no válida.");
+      alert("Error, opción no valida.");
   }
 }
