@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .destacado {
+            font-weight: bold;
+            border: 1px red solid;
+        }
+        .verde-text {
+            color: green;
+        }
+        
+        .my-gold {
+            background-color: rgb(128, 122, 0);
+            color: white;
+        }
+
+    </style>
+    <script src="ejemplo5_DOM.js" defer></script>
+</head>
+<body>
+    <p>Párrafo 1</p>
+    <p>Otro párrafo</p>
+    <p>Nombre: <input type="text"></p>
+
+    <ul id="lista">
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li class="my-gold">Element 3</li>
+    </ul>
+    <article
+        id="electriccars"
+        data-columns="3"
+        data-index-number="12314"
+        data-parent="cars">
+    </article>
+</body>
+</html>
