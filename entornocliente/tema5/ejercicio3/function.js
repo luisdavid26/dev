@@ -1,0 +1,21 @@
+let parrafonuevo = document.getElementById("lipsum");
+const nuevop = document.createElement("p");
+const textini = document.createTextNode("nuevo parrafo: ");
+const textnegrita = document.createElement("strong");
+textnegrita.textContent = "añadido";
+const textfin = document.createTextNode(" por javascript");
+nuevop.appendChild(textini);
+nuevop.appendChild(textnegrita);
+nuevop.appendChild(textfin);
+parrafonuevo.lastElementChild.append(nuevop);
+
+const formuinputs = document.getElementById("myForm");
+console.log(formuinputs);
+const nuevoinput=document.createElement("input");
+nuevoinput.value="hola";
+nuevoinput.title="input1bis";
+nuevoinput.placeholder="escribe algo";
+nuevoinput.setAttribute("input1bis","hola");
+const nuevobr=document.createElement("br");
+const nuevotexto=document.createTextNode("input1bis: ");
+formuinputs.firstElementChild.append(nuevotexto,nuevoinput,nuevobr);
