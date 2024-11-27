@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT6_2  - Interacción con el usuario: Formularios</title>
+    <script src="ejemplo1.js" defer></script>
+    <style>
+        .error {
+            color: red;
+        }
+
+        input:invalid {
+        border: 2px dashed red;
+        }
+    </style>
+</head>
+<body>
+    <form novalidate> <!-- validaciones vía API JavaScript -->
+    <!-- <form> --> <!-- validaciones HTML5 -->
+        <label for="nombre">Por favor, introduzca su nombre (entre 5 y 50 caracteres): </label>
+        <input type="text" id="nombre" name="nombre" required minlength="5" maxlength="50">
+        <br />
+        <label for="mail">Por favor, introduzca una dirección de correo electrónico: </label>
+        <input type="email" id="mail" name="mail" required minlength="8">
+        <button type="submit">Enviar</button>
+        <input id="errores">
+      </form>    
+</body>
+</html>

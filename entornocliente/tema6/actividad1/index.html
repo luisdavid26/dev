@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="functions.js"></script>
+    <style>
+      #capa1,
+      #efecto {
+        padding: 20px;
+        margin: auto;
+        border-color: aqua;
+        border-style: dotted;
+        width: 100px;
+        height: 100px;
+      }
+      .boton {
+        display: block;
+        width: 100px;
+        cursor: pointer;
+        margin: 10px;
+        border: 1px solid black;
+        border-style: dashed;
+        border-color: brown;
+      }
+      div {width: 100px; height:100px;}
+    </style>
+    <script>
+      //actividad 4
+      //hacemos un evento window que se ejecutara cuando ya toda la ventana este cargada
+      window.onload = (e) => {
+        const recuadro1 = document.getElementById("cuadro");
+        recuadro1.addEventListener("mouseenter", (e) => {
+          recuadro1.style.backgroundColor = `rgb(${255}, ${0}, ${0})`; //cada vez que se pase el raton por encima del recuadro , cambiara el de la capa 2
+        });
+        recuadro1.addEventListener("mouseleave", (e) => {
+          //cuando salga el raton del recuadro lo vuelve al blanco
+          recuadro1.style.backgroundColor = `rgb(${255}, ${255}, ${255})`;
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div>
+      <button id="boton">pulsame</button>
+    </div>
+    <div id="capa1">pasa por aqui</div>
+    <br />
+    <div id="efecto">efectos del movimiento</div>
+    <br />
+
+    <form id="formulariomultis">
+      <br />
+
+      <input id="precio" type="number" /> <br />
+
+      <input id="cantidad" type="number" /> <br />
+
+      <input type="button" id="enviar" value="Calcular" /> <br />
+
+      <input id="total" readonly />
+    </form>
+    <br />
+
+    <div
+      style="
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-color: blueviolet;
+        border-style: double;
+      "
+      id="cuadro"
+    >
+      Cuadro que cambia al entrar el ratón
+    </div>
+    <br />
+    <div id="boton1" class="boton">Pulsar aquí</div>
+    <div id="boton2" class="boton">Pulsar aquí</div>
+
+    <br />
+
+    <div><label>Coordenada X</label> <input id="cX" /></div>
+    <div><label>Coordenada Y</label> <input id="cY" /></div>
+
+    <br />
+
+    <div id="c1" style="background: red"></div>
+    <div id="c2" style="background: white"></div>
+    <div id="c3" style="background: blue"></div>
+    <br>
+    <form id="formletras">
+      <label>No se aceptan dígitos</label>
+      <input type="text" id="letras">
+      </form>
+  </body>
+</html>
