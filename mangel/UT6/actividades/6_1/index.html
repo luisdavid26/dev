@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="actividad6_1.js"></script>
+    <style>
+        div{
+            background-color: rgb(240, 171, 250);
+        }
+        #efecto{
+            background-color: rgb(152, 169, 255);
+        }
+        .boton{
+            display:block;
+            width:100px;
+            cursor:pointer;
+            margin:10px;
+            border:1px solid black
+        }
+        #ejercicio7 div {
+            width: 100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+	<h1>Miguel Angel Vera Lorenzo</h1>
+    <div onclick="alert('Pulsaste sobre el boton');">
+        <p>Pulsa aqui</p>
+    </div>
+
+    <div id="raton">
+        <p>Pasa por aqui</p>
+    </div>
+
+    <div id="efecto">
+        Efectos del movimiento
+    </div>
+
+    <form>
+        <input id="precio" type="number">
+        <input id="cantidad" type="number">
+        <input type="button" id="enviar" value="Calcular">
+        <input id="total" readonly>
+    </form>
+
+    <div style="display: block; width: 100px; height: 100px;"id="cuadro">
+        Cuadro que cambia al entrar el ratón
+    </div>
+
+    <div id="boton1" class="boton">Pulsar aquí</div>
+    <div id="boton2" class="boton">Pulsar aquí</div>
+
+    <div>
+        <label>Coordenada X</label>
+        <input id="cX">
+    </div>
+    <div>
+        <label>Coordenada Y</label>
+        <input id="cY">
+    </div>
+
+    <div id="ejercicio7">
+        <div id="c1" style="background: red"></div>
+        <div id="c2" style="background: white"></div>
+        <div id="c3" style="background: blue"></div>
+    </div>
+</body>
+</html>
