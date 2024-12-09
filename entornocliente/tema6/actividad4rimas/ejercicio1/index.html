@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>actividad1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="eventos_formularios_1.css">
+  <style>
+    .form-control.is-valid ~ .invalid-feedback {
+    display: none;
+}
+  </style>
+</head>
+    <script src="function.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <h1 for="">Diccionario de rimas</h1>
+
+      <form action="#" class="mt-4" id="newEvent">
+        <div class="form-group">
+          <label for="addpalabra">Agregar una palabra</label>
+          <input
+            type="text"
+            class="form-control"
+            name="addpalabra"
+            id="addpalabra"
+            placeholder="escribe una palabra"
+          />
+          <label for="addrima">Agregar una rima</label>
+          <input
+            type="text"
+            class="form-control"
+            name="addrima"
+            id="addrima"
+            placeholder="escribe una rima"
+          />
+          <div class="invalid-feedback">Campo requerido.</div>
+          <br>
+        <button type="submit" class="btn btn-secondary">agregar una rima</button>
+      </form>
+      <form action="#" class="mt-4" id="newEvent">
+        <div class="form-group">
+          <label for="getrimas">obtener rimas</label>
+          <input
+            type="text"
+            class="form-control"
+            name="getrimas"
+            id="getrimas"
+            placeholder="escribe una palabra"
+          />
+          <div class="invalid-feedback">Campo requerido.</div>
+          <br>
+        <button type="submit" class="btn btn-secondary">obtener</button>
+      </form>
+      <form action="#" class="mt-4" id="newEvent">
+        <div class="form-group">
+          <label for="rmvrimas">eliminar rimas</label>
+          <input
+            type="text"
+            class="form-control"
+            name="rmvrimas"
+            id="rmvrimas"
+            placeholder="escribe una rima"
+          />
+          <div class="invalid-feedback">Campo requerido.</div>
+          <br>
+        <button type="submit" class="btn btn-secondary">eliminar</button>
+      </form>
+    </div>
+  </body>
+</html>
