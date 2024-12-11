@@ -1,0 +1,1 @@
+ /Users/luis/Documents/dev/tutoflutter/hola_mundo/.dart_tool/flutter_build/1a026a3de92f7f2b98259debdc2ccb51/native_assets.yaml: 
