@@ -1,4 +1,4 @@
-import { Eventos } from "./eventos.class.js";
+import { Eventos } from "./evento.class.js";
 import { addEvent, getEvents } from "./events.js";
 
 document.addEventListener("DOMContentLoaded", () => {
