@@ -1,5 +1,3 @@
-import Producto from './producto.class.js';
-
 class Carrito {
     #productos;
 

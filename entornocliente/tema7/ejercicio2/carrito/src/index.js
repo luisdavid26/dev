@@ -1,5 +1,5 @@
-import Carrito from './model/carrito.class.js';
-import Producto from './model/producto.class.js';
+import Carrito from './models/carrito.class.js';
+import Producto from './models/producto.class.js';
 
 const carrito = new Carrito();
 const producto1 = new Producto("Manzana", 1.5, 10, true);
