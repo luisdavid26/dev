@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const campodesc = document.getElementById("description");
   const campoprecio = document.getElementById("price");
   const campoimagen = document.getElementById("image");
-  const campocarg = document.getElementById("eventsContainer");
+  const campocarg = document.getElementById("tarjeta");
 
   const tiposPermitidos = ["image/jpeg", "image/png", "image/gif", "image/jpg"];
   const nombreReg = /^[A-Za-z\s]+$/;
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     let esValido = true;
 
-    // Validaciones
+    // Validaciones de los campos
     if (!camponombre.value || !nombreReg.test(camponombre.value)) {
       camponombre.classList.add("is-invalid");
       esValido = false;
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       campoimagen.classList.remove("is-invalid");
     }
 
-    // Si todos los campos son válidos
+    // Si todos los campos son validos
     if (esValido) {
       const newEvent = new Eventos({
         id: Date.now(),
@@ -72,15 +72,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function renderEvents() {
-    campocarg.innerHTML = "";
+    // Limpiar el contenedor de eventos
+    while (campocarg.firstChild) {
+      campocarg.removeChild(campocarg.firstChild);
+    }
+
+    // Creamos y agregamos cada evento
     getEvents().forEach((event) => {
       const card = document.createElement("div");
       card.classList.add("card");
 
+      // creamos la imagen
       const img = document.createElement("img");
       img.classList.add("card-img-top");
       img.src = event.image;
+      img.alt = `${event.name} image`;
 
+      // Cuerpo de la tarjeta
       const cardBody = document.createElement("div");
       cardBody.classList.add("card-body");
 
@@ -92,19 +100,30 @@ document.addEventListener("DOMContentLoaded", () => {
       desc.classList.add("card-text");
       desc.textContent = event.description;
 
+      cardBody.appendChild(title);
+      cardBody.appendChild(desc);
+
+      // pie de la tarjeta
       const footer = document.createElement("div");
       footer.classList.add("card-footer");
 
       const small = document.createElement("small");
       small.classList.add("text-muted");
-      small.innerHTML = `${event.date} <span class="float-right">${event.price} €</span>`;
+      small.textContent = event.date;
+
+      const priceSpan = document.createElement("span");
+      priceSpan.classList.add("float-right");
+      priceSpan.textContent = `${event.price} €`;
 
       footer.appendChild(small);
-      cardBody.appendChild(title);
-      cardBody.appendChild(desc);
+      footer.appendChild(priceSpan);
+
+      // construimos la tarjeta
       card.appendChild(img);
       card.appendChild(cardBody);
       card.appendChild(footer);
+
+      //agregamos la tarjeta al contenedor
       campocarg.appendChild(card);
     });
   }

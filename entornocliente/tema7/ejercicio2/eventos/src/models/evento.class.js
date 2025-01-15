@@ -1,3 +1,6 @@
+/**
+ * utilizamos esta clase para crear los objetos de tipo evento , separanadolo de la logica principal
+ */
 export class Eventos {
     constructor({ id, name, date, description, image, price }) {
       this.id = id;

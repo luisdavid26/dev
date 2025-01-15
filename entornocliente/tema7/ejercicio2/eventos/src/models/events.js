@@ -1,5 +1,3 @@
-import { Eventos } from "./evento.class.js";
-
 export const eventData = [];
 
 export function addEvent(event) {
