@@ -1,0 +1,21 @@
+{
+  "palabras": [
+    {
+      "id": "2",
+      "palabra": "mar",
+      "rimas": [
+        "zar",
+        "estar"
+      ]
+    },
+    {
+      "id": "3",
+      "palabra": "sol",
+      "rimas": [
+        "caracol",
+        "farol",
+        "control"
+      ]
+    }
+  ]
+}

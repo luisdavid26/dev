@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const campodesc = document.getElementById("description");
   const campoprecio = document.getElementById("price");
   const campoimagen = document.getElementById("image");
-  const campocarg = document.getElementById("tarjeta");
+  const campocarg = document.getElementById("eventsContainer");
 
   const tiposPermitidos = ["image/jpeg", "image/png", "image/gif", "image/jpg"];
   const nombreReg = /^[A-Za-z\s]+$/;
