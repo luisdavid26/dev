@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listado de Eventos</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <nav>
-    <div><strong>Gestor de Eventos</strong></div>
-    <div>
-      <a href="./index.html">Inicio</a>
-      <a href="./add-event.html">formulario</a>
-    </div>
-  </nav>
-  <h1>Listado de Eventos</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado de Eventos</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav>
+      <div><strong>Gestor de Eventos</strong></div>
+      <div>
+        <a href="./index.html">inicio</a>
+        <a href="./add-event.html">formulario</a>
+      </div>
+    </nav>
+    <h1>Listado de Eventos</h1>
 
-  <div id="eventsContainer"></div>
+    <div id="eventsContainer"></div>
+  </body>
+  <!-- script para hacer peticiones asincronas-->
+   <!--
+  <script type="module" src="./src/async/index_async.js"></script>
+  -->
 
-</body>
-<script type="module" src="./src/async/eventos_async.js"></script>
+  <!-- script para hacer peticiones en thennables-->
+      <!--  
+  <script type="module" src="./src/thennables/index_thennables.js" ></script>
+  -->
+
+  <!-- script para hacer peticiones en XHR-->
+<script type="module" src="./src/XHR/index_XHR.js" ></script>
 </html>

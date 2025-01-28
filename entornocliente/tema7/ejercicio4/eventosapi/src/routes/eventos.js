@@ -24,7 +24,7 @@ eventRouter.post('/', (req, res) => {
   };
 
   eventos.push(newEvent);
-  console.log(eventos); // Verifica que el evento se haya añadido correctamente
+  console.log(eventos); 
 
   res.status(201).json({
     message: 'Evento añadido con éxito',

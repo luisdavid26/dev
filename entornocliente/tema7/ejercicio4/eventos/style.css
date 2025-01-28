@@ -7,9 +7,9 @@ body {
 }
 
 nav {
-  background-color: #6200ea;
+  background-color: #5b5861;
   color: white;
-  padding: 10px 20px;
+  padding: 20px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,40 +32,105 @@ h1 {
   color: #6200ea;
 }
 
-table {
-  width: 90%;
-  margin: 20px auto;
-  border-collapse: collapse;
-  background-color: white;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+#eventsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align the cards */
+  gap: 16px; /* Space between cards */
+  padding: 16px;
 }
 
-table th, table td {
-  padding: 15px;
-  text-align: left;
+.card {
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+  margin: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  min-width: 25%;
+  min-height: auto;
+  max-width: 40%; 
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.card-img-top {
+  width: 100%;
+  height: auto;
+  max-height: 150px; 
+  object-fit: contain; 
   border-bottom: 1px solid #ddd;
 }
 
-table th {
-  background-color: #6200ea;
-  color: white;
+.card-body {
+  padding: 16px;
+  flex-grow: 1;
 }
 
-table td img {
-  width: 80px;
-  border-radius: 8px;
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+  padding: 16px;
 }
 
-table tbody tr:hover {
-  background-color: #f1f1f1;
+.card-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+  white-space: normal; 
+  overflow: visible; 
+  text-overflow: clip;
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #6200ea;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-top: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.text-muted {
+  font-size: 0.875rem;
+  color: #999;
+}
+
+.float-right {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  #eventsContainer {
+    gap: 8px;
+  }
+
+  .card {
+    margin: 8px;
+    max-width: 100%; /* Ensure cards don’t take full width */
+  }
+
+  .card-img-top {
+    height: 150px;
+  }
+
+  .card-body {
+    padding: 12px;
+  }
+
+  .card-footer {
+    padding: 8px 12px;
+  }
 }

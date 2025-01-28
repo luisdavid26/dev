@@ -7,19 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     let esvalido = true;
 
-    // Obtener los valores de los campos dentro del evento submit
+    // obtener los valores de los campos dentro del evento submit
     const camponombre = document.getElementById("name");
     const campofecha = document.getElementById("date");
     const campodesc = document.getElementById("description");
     const campoprecio = document.getElementById("price");
-    const campoimagen = document.getElementById("image").files[0]; // Obtener el archivo seleccionado
-
+    const campoimageninput = document.getElementById("image"); 
+    const campoimagen = campoimageninput.files[0]; 
     const tipospermi = ["image/jpeg", "image/png", "image/gif", "image/jpg"];
     const fechaReg = /^\d{4}-\d{2}-\d{2}$/;
-    const nombreReg = /^[A-Za-z ]{1,}$/; // Permitir espacios en el nombre
-    const descReg = /^[A-Za-z0-9 ]{1,}$/; // Permitir espacios en la descripción
-
-    // Validaciones
+    const nombreReg = /^[A-Za-z ]{1,}$/;
+    const descReg = /^[A-Za-z0-9 .,;:!?()\n]{1,}$/;
+    // validaciones
     if (!camponombre.value || !nombreReg.test(camponombre.value)) {
       camponombre.classList.add("is-invalid");
       camponombre.classList.remove("is-valid");
@@ -56,34 +55,34 @@ document.addEventListener("DOMContentLoaded", () => {
       campoprecio.classList.remove("is-invalid");
     }
 
-    //if (!campoimagen || !tipospermi.includes(campoimagen.type)) {
-    //  campoimagen.classList.add("is-invalid");
-    //  campoimagen.classList.remove("is-valid");
-    //  esvalido = false;
-    //} else {
-    //  campoimagen.classList.add("is-valid");
-    //  campoimagen.classList.remove("is-invalid");
-    //}
+    if (!campoimagen || !tipospermi.includes(campoimagen.type)) {
+      campoimageninput.classList.add("is-invalid");
+      campoimageninput.classList.remove("is-valid");
+      esvalido = false;
+    } else {
+      campoimageninput.classList.add("is-valid");
+      campoimageninput.classList.remove("is-invalid");
+    }
 
     if (esvalido) {
-      // Convertir la imagen a Base64
+      // convertir la imagen a Base64
       const reader = new FileReader();
       reader.onloadend = async () => {
         const nuevoEvento = {
-          nombre: camponombre.value, // Usar el valor del campo
-          fecha: campofecha.value, // Usar el valor del campo
-          descripcion: campodesc.value, // Usar el valor del campo
-          precio: campoprecio.value, // Usar el valor del campo
-          imagen: reader.result, // Esto será la cadena Base64
+          nombre: camponombre.value, 
+          fecha: campofecha.value, 
+          descripcion: campodesc.value, 
+          precio: campoprecio.value, 
+          imagen: reader.result, // esto sera la cadena Base64
         };
 
-        // Llama a la función para añadir el evento
+        // Llama a la funcion para añadir el evento
         await postEvento(nuevoEvento);
-        location.assign("index.html"); // Redirigir a la página de listado de eventos
+        location.assign("index.html");
       };
 
       if (campoimagen) {
-        reader.readAsDataURL(campoimagen); // Leer la imagen como Base64
+        reader.readAsDataURL(campoimagen); // leer la imagen como Base64
       } else {
         console.error("No se ha seleccionado ninguna imagen.");
       }

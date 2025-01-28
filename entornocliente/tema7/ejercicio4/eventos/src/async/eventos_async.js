@@ -1,28 +1,29 @@
-const SERVER = "http://localhost:5001"; // Asegúrate de que este puerto sea el correcto
+const SERVER = "http://localhost:5001"; 
 let eventos = [];
 
-// Obtener eventos
+// obtener eventos
 async function getEventos() {
+  console.log("obteniendo eventos async");
   try {
     const resp = await fetch(`${SERVER}/eventos`); // promesa fetch
     if (!resp.ok) throw new Error(`Error: ${resp.status} ${resp.statusText}`);
     const json = await resp.json(); // JSON a Objeto
-    console.log(json);
     eventos = json.data;
-    replaceEventos(); // Llama a la función para mostrar los eventos
+    replaceEventos(); // llama a la funcion para mostrar los eventos
   } catch (error) {
-    console.error("Fallo en la obtención de eventos:", error);
+    console.error("fallo al obtener eventos:", error);
   }
 }
 
-// Insertar evento con Fetch
+// insertar evento con Fetch
 async function postEvento(evento) {
+  console.log("insertando evento async...");
   const data = {
     name: evento.nombre,
     date: evento.fecha,
     description: evento.descripcion,
     price: evento.precio,
-    image: evento.imagen, // Esto será la cadena Base64
+    image: evento.imagen,
   };
 
   try {
@@ -30,47 +31,41 @@ async function postEvento(evento) {
       method: "POST",
 
       headers: {
-        "Content-Type": "application/json", // Cambia a JSON
+        "Content-Type": "application/json", // cambia a JSON
       },
 
-      body: JSON.stringify(data), // Convierte el objeto a JSON
+      body: JSON.stringify(data), // convierte el objeto a JSON
     });
 
     if (!resp.ok) throw new Error(`Error: ${resp.status} ${resp.statusText}`);
 
-    const json = await resp.json(); // JSON a Objeto
+    const json = await resp.json(); // JSON a objeto
 
-    console.log(json);
 
-    eventos.push(json.data); // Agrega el nuevo evento a la lista
-
-    replaceEventos(); // Actualiza la visualización
+    eventos.push(json.data); // agrega el nuevo evento a la lista
+    console.log("Evento anyadido:", json.data);
+    replaceEventos(); // Actualiza la vista
   } catch (error) {
-    console.error("Fallo insertando el evento:", error);
+    console.error("fallo insertando el evento:", error);
   }
 }
 
-// Reemplazar eventos en el DOM
+// reemplazar eventos en el DOM
 function replaceEventos() {
-  const container = document.getElementById("eventsContainer");
-  if (!container) {
-    console.error("El contenedor de eventos no se encontró.");
-    return; // Salir si el contenedor no existe
-  }
-  container.innerHTML = ''; // Limpiar el contenedor
+  const container = document.getElementById("eventsContainer") ;
   eventos.forEach((event) => {
     appendEvento(event, container);
   });
 }
 
-// Añadir un evento al DOM
+// Anyadir un evento al DOM
 function appendEvento(event, container) {
   const card = document.createElement("div");
   card.classList.add("card");
 
   const img = document.createElement("img");
   img.classList.add("card-img-top");
-  img.src = event.image; // Asegúrate de que la propiedad sea correcta
+  img.src = event.image; 
   img.alt = `${event.name} image`;
 
   const cardBody = document.createElement("div");
@@ -107,6 +102,5 @@ function appendEvento(event, container) {
 
   container.appendChild(card);
 }
-getEventos();
-// Exportar las funciones para que puedan ser utilizadas en otros archivos
+
 export { getEventos, postEvento };
