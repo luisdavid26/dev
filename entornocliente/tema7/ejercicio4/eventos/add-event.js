@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (esvalido) {
-      // convertir la imagen a Base64
+      // convertir la imagen a base64
       const reader = new FileReader();
       reader.onloadend = async () => {
         const nuevoEvento = {
@@ -73,18 +73,18 @@ document.addEventListener("DOMContentLoaded", () => {
           fecha: campofecha.value, 
           descripcion: campodesc.value, 
           precio: campoprecio.value, 
-          imagen: reader.result, // esto sera la cadena Base64
+          imagen: reader.result, // esto sera la cadena base64
         };
 
-        // Llama a la funcion para añadir el evento
+        // Llama a la funcion para anyadir el evento
         await postEvento(nuevoEvento);
         location.assign("index.html");
       };
 
       if (campoimagen) {
-        reader.readAsDataURL(campoimagen); // leer la imagen como Base64
+        reader.readAsDataURL(campoimagen); // leer la imagen como base64
       } else {
-        console.error("No se ha seleccionado ninguna imagen.");
+        console.error("no se ha seleccionado ninguna imagen.");
       }
     }
   });

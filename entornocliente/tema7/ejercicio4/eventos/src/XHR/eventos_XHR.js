@@ -10,15 +10,15 @@ function getEventos() {
       if (xhr.status >= 200 && xhr.status < 300) {
         const response = JSON.parse(xhr.responseText);
         eventos = response.data; // guardar los eventos en la variable
-        console.log("Eventos obtenidos:", eventos);
+        console.log("eventos obtenidos:", eventos);
         replaceEventos(); // actualizamos la vista
       } else {
-        console.error("Error al obtener eventos:", xhr.status, xhr.statusText);
+        console.error("error al obtener eventos:", xhr.status, xhr.statusText);
       }
     };
   
     xhr.onerror = function () {
-      console.error("fallo al hacer la petición GET.");
+      console.error("fallo al hacer la peticion get");
     };
   
     xhr.send(); // Enviar la solicitud
@@ -27,7 +27,7 @@ function getEventos() {
   
 // insertar evento usando XHR
 function postEvento(evento) {
-    console.log("Insertando evento con XHR...");
+    console.log("insertando evento con XHR");
     const xhr = new XMLHttpRequest();
     xhr.open("POST", `${SERVER}/eventos`, true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -52,7 +52,7 @@ function postEvento(evento) {
     };
   
     xhr.onerror = function () {
-      console.error("Fallo al hacer la petición POST.");
+      console.error("Fallo al hacer la peticion post");
     };
   
     xhr.send(data); // enviar los datos

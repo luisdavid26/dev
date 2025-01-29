@@ -17,7 +17,7 @@ async function getEventos() {
 
 // insertar evento con Fetch
 async function postEvento(evento) {
-  console.log("insertando evento async...");
+  console.log("insertando evento async");
   const data = {
     name: evento.nombre,
     date: evento.fecha,

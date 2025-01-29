@@ -11,7 +11,7 @@ function getEventos() {
       })
       .then((json) => {
         eventos = json.data; // guardar los eventos en la variable
-        console.log("Eventos obtenidos:", eventos);
+        console.log("eventos obtenidos:", eventos);
         replaceEventos(); // actualizamos 
       })
       .catch((error) => {
@@ -21,7 +21,7 @@ function getEventos() {
   
 // insertar evento con Fetch
 function postEvento(evento) {
-    console.log("insertando evento thennables...");
+    console.log("insertando evento thennables");
     const data = {
       name: evento.nombre,
       date: evento.fecha,
