@@ -1,0 +1,39 @@
+.listado {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    justify-items: center;
+    width: 100%;
+}
+
+.listado__libro {
+    margin: 15px 0;
+    color: var(--primary-color);
+    height: fit-content;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.listado__libro:hover {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+
+/* Media queries */
+
+@media (max-width: 1200px) {
+    .seccion { grid-template-columns: 25% 25% 25% 25%; }
+}
+
+@media (max-width: 992px) {
+    .seccion { grid-template-columns: 33.333% 33.333% 33.333%; } 
+}
+
+@media (max-width: 768px) {
+    .seccion { grid-template-columns: 50% 50%; }
+}
+
+@media (max-width: 450px) {
+    .seccion { grid-template-columns: 100%; }
+}

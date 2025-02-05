@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  font-family: "MuseoModerno", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary-color: #4e4e4e;
+  --secondary-color: #fff;
+  --menu-color: #f8f9fa;
+
+  --success-color: #2e8b57;
+  --danger-color: #d01e1e;
+
+  --default-size: 80%;
+
+  --current-font: "MuseoModerno", sans-serif;
+}
+
+/* Archivo de reset */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+a { text-decoration: none; }
+a:hover { text-decoration: none; }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
