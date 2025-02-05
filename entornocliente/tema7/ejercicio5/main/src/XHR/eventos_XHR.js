@@ -1,4 +1,4 @@
-const SERVER = "http://localhost:5001";
+const SERVER = "http://localhost:8000";
 let eventos = [];
 
 function getEventos() {
