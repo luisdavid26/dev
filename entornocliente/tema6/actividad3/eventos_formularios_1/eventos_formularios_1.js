@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const campoimagen = document.getElementById("image");
   const campocarg = document.getElementById("eventsContainer");
 
-  const tipospermi = ["image/jpeg", "image/png", "image/gif","iamge/jpg"];//determinamos que formatos de imagen son permitidas
+  const tipospermi = ["image/jpeg", "image/png", "image/gif","image/jpg"];//determinamos que formatos de imagen son permitidas
   //const fechaReg = /^\d{2}\/\d{2}\/\d{4}$/;//expresion regular para verificar la fecha
   //fecha reg comentado para que funcione el codigo
   const nombreReg=/^[A-Za-z]{1,}$/;
