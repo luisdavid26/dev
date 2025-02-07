@@ -1,5 +1,4 @@
 // auth-service.js
-const SERVER = "http://localhost:3000"; // URL del servidor backend
 
 class Auth {
     // Método para iniciar sesión
