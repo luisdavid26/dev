@@ -1,4 +1,3 @@
-// login.js
 import Auth from "./auth-service.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -6,21 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorInfo = document.getElementById("errorInfo");
 
   loginForm.addEventListener("submit", async (event) => {
-    event.preventDefault(); // Evita el envío por defecto del formulario
-
-    // Obtener los valores del formulario
+    event.preventDefault(); // evita el envio por defecto del formulario
+    console.log(localStorage.getItem("token"));
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
     try {
-      // Llamamos al método login de la clase Auth, que se encarga de guardar el token en localStorage
+      // llamamos al metodo login de la clase auth, que se encarga de guardar el token en localstorage
       await Auth.login(username, password);
-      // Si el login es exitoso, redirige a index.html
-      window.location= "./Eventos/index.html";
+      // si el login es exitoso, redirige a index.html
+      window.location= "../public/index.html";
     } catch (error) {
-      // Si hay un error (por ejemplo, credenciales incorrectas), se muestra el mensaje en la página
-      console.error("Error en el login:", error);
-      errorInfo.textContent = error.message || "Usuario o contraseña incorrectos.";
+      console.error("error en el login:", error);
+      errorInfo.textContent = error.message;
     }
   });
 });

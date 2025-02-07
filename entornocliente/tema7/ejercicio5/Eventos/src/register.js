@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const errorInfo = document.getElementById("errorInfo");
     errorInfo.textContent = "";
 
-    // Obtener los valores de los campos
+    // obtener los valores de los campos
     const campoUsername = document.getElementById("username");
     const campoEmail = document.getElementById("email");
     const campoEmail2 = document.getElementById("email2");
@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const campoAvatar = campoAvatarInput.files[0];
 
     const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const passwordReg = /^.{4,}$/; // Mínimo 4 caracteres
 
-    // Validaciones
+
+    // validaciones
     if (!campoUsername.value.trim()) {
       campoUsername.classList.add("is-invalid");
       esValido = false;
@@ -42,15 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
       campoEmail2.classList.remove("is-invalid");
     }
 
-    if (!campoPassword.value || !passwordReg.test(campoPassword.value)) {
-      campoPassword.classList.add("is-invalid");
-      esValido = false;
-    } else {
-      campoPassword.classList.remove("is-invalid");
-    }
-
     if (esValido) {
-      // Convertir la imagen a base64 si existe
+      // convertir la imagen a base64 si existe
       const reader = new FileReader();
       reader.onloadend = async () => {
         const nuevoUsuario = {
@@ -59,29 +52,29 @@ document.addEventListener("DOMContentLoaded", () => {
           password: campoPassword.value,
           avatar: campoAvatar ? reader.result : "no hay imagen",
         };
-
+        // llamamos al metodo register de la clase auth y pasamos el nuevo usuario
         try {
           const response = await Auth.register(nuevoUsuario);
           const mensajeerro = response.message;
+          //si el registro es exitoso, redirige a la pagina principal
           if (response.status === 201) {
-            window.alert("Registro exitoso. Redirigiendo al login...");
-            location.assign("login.html");
+            location.assign("../public/index.html");
           } else {
-
-            window.alert(`Error ${response.status}: ${mensajeerro}`);
+            // mostramos el error en un alert para que lo vea bien el usuario
+            window.alert(`error ${response.status}: ${mensajeerro}`);
           }
         } catch (error) {
-          window.alert(`Error ${response.status}: ${mensajeerro}`);
+          console.log(`error ${response.status}: ${mensajeerro}`);
         }
       };
 
-      if (campoAvatar) {
+      if (campoAvatar) { 
         reader.readAsDataURL(campoAvatar);
       } else {
-        reader.onloadend(); // Llamar directamente si no hay imagen
+        reader.onloadend();
       }
     } else {
-      window.alert("Por favor, corrige los errores del formulario.");
+      window.alert("corrige los errores del formulario");
     }
   });
 });

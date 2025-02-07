@@ -2,13 +2,13 @@ import {} from 'dotenv/config'; // acceso a .env
 import express from 'express';
 import cors from 'cors';
 
-import { connectDB } from './config/db.js';
-import userRouter from './routes/users.js';
-import authRouter from './routes/auth.js';
-import eventoRouter from './routes/eventos.js';
+import { connectDB } from '../src/config/db.js';
+import userRouter from '../src/routes/users.js';
+import authRouter from '../src/routes/auth.js';
+import eventoRouter from '../src/routes/eventos.js';
 
-import Evento from './models/eventos.js';
-import User from './models/user.js';
+import Evento from '../src/models/eventos.js';
+import User from '../src/models/user.js';
 import mongoose from 'mongoose';
 
 const { Types: { ObjectId } } = mongoose;

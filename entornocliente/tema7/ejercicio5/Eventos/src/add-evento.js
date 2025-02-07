@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Llama a la funcion para anyadir el evento
         await postOneEvent(nuevoEvento);
-        location.assign("../index.html");
+        location.assign("../public/index.html");
       };
 
       if (campoimagen) {
