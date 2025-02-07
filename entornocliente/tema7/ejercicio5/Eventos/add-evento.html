@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eventos: Añadir Evento</title>
+        <meta charset="UTF-8" />
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous"
+        />
+        <style>
+          .form-control.is-valid ~ .invalid-feedback {
+            display: none;
+          }
+          @media (min-width: 576px) {
+            .card-columns {
+              column-count: 2;
+            }
+          }
+          @media (min-width: 992px) {
+            .card-columns {
+              column-count: 3;
+            }
+          }
+        </style>
+      </head>
+    
+      <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="">Events manager</a>
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="./index.html">Eventos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./add-evento.html">Nuevo evento</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../login.html" id="logout">Cerrar sesión</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    
+        <!-- Contenido principal: Formulario para añadir evento -->
+        <div class="container mt-4">
+          <form action="#" class="mt-4" id="formuadd">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                id="name"
+                placeholder="Nombre"
+              />
+              <div class="invalid-feedback">Campo requerido.</div>
+            </div>
+            <div class="form-group">
+              <label for="date">Fecha</label>
+              <input type="date" class="form-control" id="date" name="date" />
+              <div class="invalid-feedback">Campo requerido.</div>
+            </div>
+            <div class="form-group">
+              <label for="description">Descripción</label>
+              <textarea
+                class="form-control"
+                id="description"
+                name="description"
+                rows="3"
+                placeholder="Descripción"
+              ></textarea>
+              <div class="invalid-feedback">Campo requerido.</div>
+            </div>
+            <div class="form-group">
+              <label for="price">Precio (en €)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="price"
+                name="price"
+                min="0.00"
+                max="10000.00"
+                step="0.01"
+              />
+              <div class="invalid-feedback">Campo requerido.</div>
+            </div>
+            <div class="form-group">
+              <label for="image">Imagen</label>
+              <input
+                type="file"
+                class="form-control"
+                accept="image/*"
+                id="image"
+                name="image"
+                required
+              />
+              <div class="invalid-feedback">Campo requerido.</div>
+            </div>
+            <img src="" alt="" id="imgPreview" class="img-thumbnail" />
+            <button type="submit" class="btn btn-primary">Añadir</button>
+          </form>
+        </div>
+    <!-- Incluye el script para verificar token y logout -->
+    <script type="module" src="./verificar-token.js"></script>
+    <!-- Incluye también tu script de gestión del formulario para añadir evento -->
+    <script type="module" src="./src/add-evento.js"></script>
+  </body>
+</html>

@@ -1,8 +1,10 @@
 // auth-service.js
+const SERVER = "http://localhost:8000";
 
 class Auth {
     // Método para iniciar sesión
     static async login(username, password) {
+        console.log("intentando inicio de sesion");
         const response = await fetch(`${SERVER}/auth/login`, {
             method: "POST",
             headers: {
@@ -12,6 +14,7 @@ class Auth {
         });
 
         if (response.ok) {
+            console.log("login exitoso");
             const data = await response.json();
             localStorage.setItem("token", data.token); // Guardar el token
             return data;
@@ -22,21 +25,26 @@ class Auth {
 
     // Método para registrar un usuario
     static async register(userData) {
-        const response = await fetch(`${SERVER}/auth/register`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(userData),
-        });
-
-        if (response.ok) {
+        try {
+            const response = await fetch(`${SERVER}/auth/register`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(userData),
+            });
+    
             const data = await response.json();
+    
+            if (!response.ok) {
+                console.log(`Error: ${response.status} - ${data.message}`);
+            }
+    
             return data;
-        } else {
-            throw new Error("Error en el registro");
+        } catch (error) {
+            console.error("Error en el registro:", error.message);
+            throw error;
         }
     }
+    
 
     // Método para verificar el token
     static async checkToken() {
@@ -61,7 +69,7 @@ class Auth {
         return response.json();
     }
 
-    // Método para cerrar sesión
+    // Metodo para cerrar sesión
     static logout() {
         localStorage.removeItem("token");
     }

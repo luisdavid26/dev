@@ -1,4 +1,4 @@
-import { registerUser } from "./auth-service.js";
+import Auth from "./auth-service.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const formulario = document.getElementById("form-register");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const campoAvatar = campoAvatarInput.files[0];
 
     const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const passwordReg = /^.{6,}$/; // Mínimo 6 caracteres
+    const passwordReg = /^.{4,}$/; // Mínimo 4 caracteres
 
     // Validaciones
     if (!campoUsername.value.trim()) {
@@ -57,19 +57,21 @@ document.addEventListener("DOMContentLoaded", () => {
           username: campoUsername.value.trim(),
           email: campoEmail.value.trim(),
           password: campoPassword.value,
-          avatar: campoAvatar ? reader.result : "", // Si no hay imagen, enviamos un string vacío
+          avatar: campoAvatar ? reader.result : "no hay imagen",
         };
 
         try {
-          const response = await register(nuevoUsuario);
-
+          const response = await Auth.register(nuevoUsuario);
+          const mensajeerro = response.message;
           if (response.status === 201) {
+            window.alert("Registro exitoso. Redirigiendo al login...");
             location.assign("login.html");
           } else {
-            errorInfo.textContent = "Error en el registro. Inténtalo de nuevo.";
+
+            window.alert(`Error ${response.status}: ${mensajeerro}`);
           }
         } catch (error) {
-          errorInfo.textContent = "Error en el registro. Inténtalo de nuevo.";
+          window.alert(`Error ${response.status}: ${mensajeerro}`);
         }
       };
 
@@ -79,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         reader.onloadend(); // Llamar directamente si no hay imagen
       }
     } else {
-      errorInfo.textContent = "Por favor, corrige los errores del formulario.";
+      window.alert("Por favor, corrige los errores del formulario.");
     }
   });
 });
