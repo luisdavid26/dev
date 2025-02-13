@@ -14,7 +14,19 @@ async function getEventos() {
     console.error("fallo al obtener eventos:", error);
   }
 }
+export async function demogetEventos(){
+  try {
+    const demresp=await fetch(`${SERVER}/eventos`);
+    if(!demresp.ok){
+      console.log("error")
+    }
+    const json=await resp.json();// lo pasamos a objeto
+    eventos=json.data;
 
+  } catch (error) {
+    console.log(error);
+  }
+}
 // insertar evento con Fetch
 async function postEvento(evento) {
   console.log("insertando evento async");
@@ -29,7 +41,6 @@ async function postEvento(evento) {
   try {
     const resp = await fetch(`${SERVER}/eventos`, {
       method: "POST",
-
       headers: {
         "Content-Type": "application/json", // cambia a JSON
       },

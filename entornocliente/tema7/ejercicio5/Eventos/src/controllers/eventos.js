@@ -11,6 +11,14 @@ export async function getAllEvents(req, res) {
         return res.status(500).json({ message: "Error al obtener los eventos" });
     }
   }
+  export async function demogetALLEvents(req,res){
+    try {
+        const demoeventos = await Evento.find();
+        return res.status(200).json({data: demoeventos});
+    } catch (error) {
+        console.log("error")
+    }
+  }
   
 // Obtener un evento específico por ID
 export async function getOneEvent(req, res, next) {

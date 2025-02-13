@@ -28,7 +28,13 @@ class Auth {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
       });
-
+      const respeus = await fetch(`${SERVER}/auth/register`,
+        {
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body:JSON.stringify(userData)
+        }
+      )
       const data = await response.json();
 
       if (!response.ok) {
