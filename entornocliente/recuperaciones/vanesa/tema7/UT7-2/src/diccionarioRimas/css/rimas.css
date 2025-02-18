@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* MAIN */
+main{
+    margin-top: 30px;
+}
+
+/* H1 */
+h1{
+    font-family: "Cherry Bomb One";
+}
+
+/* FORMULARIO */
+form input{
+    padding: 2px;
+    margin: 10px;
+}
