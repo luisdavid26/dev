@@ -1,6 +1,4 @@
 function ventasVendedores(nomventausu, ventas) {
-  console.log(`Ventas del vendedor: ${nomventausu}`);
-  console.log(`------------------------------------------`);
   try {
     // Filtrar las ventas del vendedor especificado
     let ventasVendedor = ventas.detalle.filter(
@@ -51,16 +49,13 @@ function cantidadVentasComponente(nomcomponenteusu, componente) {
       contadorcompo++;
     }
   });
-return contadorcompo;
+  return contadorcompo;
 }
 
 function presupuestoPC(componentesusu, ventas) {
   let totalpres = 0;
   // Usa la propiedad correcta "precios"
   let arrventasprecio = ventas.precios;
-  console.log(`Presupuesto del PC: ${componentesusu}`);
-  console.log(`------------------------------------------`);
-
   // Convertir la cadena de componentes en un array
   let arrcompousu = componentesusu.split(",");
 
@@ -77,25 +72,26 @@ function presupuestoPC(componentesusu, ventas) {
       console.log(`Componente no encontrado: ${componente}`);
     }
   });
+  console.log(`el total de una venta es: ${totalpres}`);
+
   return totalpres;
 }
 
 function ventasTotalesVendedore(nomvendedores, ventas) {
-  let totalpricompo=0;
-  console.log(`ventas :${nomvendedores}:`);
-  console.log(`------------------------------------------`);
-  //try {//recorrer el total de vendedores
-    nomvendedores=nomvendedores.trim();
-    let ventasdelvendedor= ventasVendedores(nomvendedores,ventas);
-    console.log(`nombre del vendedor antes de pasarle al for each ${ventasdelvendedor},componentes${ventasdelvendedor[0].componentesPC}`)
-        
-   ventasdelvendedor.forEach(element => {
-    let elementocompo=element.componentesPC.join(",");
-    console.log(`elementocompo: ${elementocompo}`)
-       totalpricompo=presupuestoPC(elementocompo,ventas);
+  let totalpreciovendedor = 0;
+  let totalpricompo = 0;
+  try {
+    //recorrer el total de vendedores
+    nomvendedores = nomvendedores.trim();
+    let ventasdelvendedor = ventasVendedores(nomvendedores, ventas);
+    ventasdelvendedor.forEach((element) => {
+      let elementocompo = element.componentesPC.join(",");
+      console.log(`elementocompo: ${elementocompo}`);
+      totalpricompo = presupuestoPC(elementocompo, ventas);
+      totalpreciovendedor += totalpricompo;
     });
-    console.log(totalpricompo);
-  //} catch (error) {
-  //  console.error(`a ocurrido un error`); //si ocurre un error lo manejamos con el try catch
-  //}
+    return totalpreciovendedor;
+  } catch (error) {
+    console.error(`a ocurrido un error`); //si ocurre un error lo manejamos con el try catch
+  }
 }
