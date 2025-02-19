@@ -1,21 +1,21 @@
+import { Fragment } from 'react';
+import Cabecera from './components/estructura/Cabecera';
+import Navegacion from './components/estructura/Navegacion';
+import Contenido from './components/estructura/Contenido';
+import PiePagina from './components/estructura/PiePagina';
+import Rutas from './components/estructura/Rutas';
+import "./components/ALL_CSS/App.css";
 
-import './App.css'
-import Libro from './components/Libro'
-import bibioteca from './assets/biblioteca.json'
-import Cabecera from './components/estructura/Cabecera'
-import Contenido from './components/estructura/Contenido'
-import Navegacion from './components/estructura/Navegacion'
-import PiePagina from './components/estructura/PiePagina'
-const App=()=> {
+const App = () => {
   return (
-    <>
-    <Cabecera />
-    <Navegacion />
-    <Contenido />
-    <PiePagina />
+    <Fragment>
+      <Cabecera />
+      <Navegacion />
+      <Rutas />
+      <Contenido />
+      <PiePagina />
+    </Fragment>
+  );
+};
 
-    </>
-  )
-}
-
-export default App
+export default App;

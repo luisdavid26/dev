@@ -4,7 +4,8 @@ import ListadoLibros from "../ListadoLibros.jsx";
 const Contenido = () => {
     return (
         <Fragment>
-            <main className='main'>    <ListadoLibros />
+            <main className='main'> 
+                   <ListadoLibros />
             </main>
         </Fragment>
     );
