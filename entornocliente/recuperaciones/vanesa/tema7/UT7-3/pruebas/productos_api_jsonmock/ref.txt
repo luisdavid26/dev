@@ -1,0 +1,3 @@
+referencias usasdas:
+- https://mauriciogc.medium.com/api-crud-node-js-y-express-260d194ed303
+- https://dev.to/maxwellnewage/persistencia-de-datos-en-javascript-localstorage-419m

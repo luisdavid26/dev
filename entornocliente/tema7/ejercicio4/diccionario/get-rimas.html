@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obtener Rimas</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <style>
+          .container { max-width: 600px; }
+    .form-section { 
+      border: 1px solid #dee2e6; 
+      border-radius: 5px; 
+      padding: 20px; 
+      margin-bottom: 20px; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+      background: #f8f9fa;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="text-center mt-3">
+      <a href="./index.html" class="btn btn-secondary">regresar al inicio</a>
+    </div>
+    <div class="container mt-4">
+      <h1 class="text-center">obtener rimas</h1>
+      <form id="getrimaform" class="form-section">
+        <label for="palabra">palabra:</label>
+        <input type="text" class="form-control" id="palabra" required />
+        <div class="invalid-feedback">campo requerido</div>
+        <button type="submit" class="btn btn-primary mt-3">obtener</button>
+        <ul id="listarimas" class="list-group mt-3"></ul>
+      </form>
+    </div>
+    <script type="module" src="./src/peticiones/get-rimas.js"></script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+referencias usasdas:
+- https://mauriciogc.medium.com/api-crud-node-js-y-express-260d194ed303
+- https://dev.to/maxwellnewage/persistencia-de-datos-en-javascript-localstorage-419m
+- https://stackoverflow.com/questions/68469621/turning-json-into-a-map-in-js
+- https://www.geeksforgeeks.org/how-to-convert-map-to-json-in-javascript/
+- https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries

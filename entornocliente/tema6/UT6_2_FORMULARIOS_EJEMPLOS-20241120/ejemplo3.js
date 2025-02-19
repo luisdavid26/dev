@@ -11,10 +11,11 @@ const tbody = document.querySelector("#personas > tbody");
  */
 formPersona.addEventListener("submit", (e) => {
   e.preventDefault();
+  
   const hobbies = Array.from(formPersona.hobbies)
     .filter((i) => i.checked)
     .map((i) => i.value);
-  // console.log(hobbies);
+   console.log(hobbies);
   const fichero = formPersona.avatar.files[0];
 
   const tr = document.createElement("tr");

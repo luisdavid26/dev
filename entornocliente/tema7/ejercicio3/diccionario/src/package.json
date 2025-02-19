@@ -1,0 +1,16 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "main": "controller.js",
+  "scripts": {
+    "start:api": "json-server --watch eventos.json --port 3001",
+    "start": "lite-server "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}

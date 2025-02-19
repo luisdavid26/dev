@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "name": "Concierto de Rock",
+      "date": "2025-01-20",
+      "description": "Una noche inolvidable con las mejores bandas de rock.",
+      "image": "https://img.freepik.com/fotos-premium/ardilla-sentada-rama-arbol_1048944-30371835.jpg?w=1380",
+      "price": 25.99
+    },
+    {
+      "id": "2",
+      "name": "Feria del Libro",
+      "date": "2025-02-15",
+      "description": "Encuentra libros de todos los géneros y conoce a tus autores favoritos.",
+      "image": "https://img.freepik.com/fotos-premium/primer-plano-ardilla-poste-madera_1048944-30370286.jpg?w=1380",
+      "price": 0
+    },
+    {
+      "id": 1736980427648,
+      "name": "asdasd",
+      "date": "2025-01-16",
+      "description": "asd",
+      "image": "blob:http://localhost:3001/64fcab49-0ee9-41c7-9491-99369d5ad70c",
+      "price": 23
+    },
+    {
+      "id": 1736980719657,
+      "name": "aaa",
+      "date": "2025-01-16",
+      "description": "as",
+      "image": "blob:http://localhost:3001/373a8b21-0164-489c-85a7-b35c1844f4bd",
+      "price": 2
+    },
+    {
+      "id": 1736980750209,
+      "name": "aaa",
+      "date": "2025-01-11",
+      "description": "asdad",
+      "image": "blob:http://localhost:3001/059411e0-d551-4259-a806-32db77d3dc4d",
+      "price": 23
+    },
+    {
+      "id": 1736982012493,
+      "name": "aas",
+      "date": "2025-01-08",
+      "description": "asdas",
+      "image": "blob:http://localhost:3001/59c8ea54-12d4-45ec-9273-47178966d368",
+      "price": 23
+    },
+    {
+      "id": 1736982105481,
+      "name": "aas",
+      "date": "2025-01-08",
+      "description": "asdas",
+      "image": "blob:http://localhost:3001/a633637c-ec13-487d-a7c2-32d991dc6dd5",
+      "price": 23
+    }
+  ]
+}
