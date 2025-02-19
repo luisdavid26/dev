@@ -58,7 +58,8 @@ while (menu) {
       let nomcompousu = prompt(
         `los nombres de los componentes son\n${nombrecomponentes}\ndime el nombre del componente por la que quieres buscar`
       );
-      cantidadVentasComponente(nomcompousu, ventas.vendedores);
+    let resultcompo=  cantidadVentasComponente(nomcompousu, ventas.vendedores);
+    console.log(`el componente se a vendido este nuemero de veces: ${resultcompo}`);
       break;
 
     case "4":
@@ -66,12 +67,16 @@ while (menu) {
         
         `los nombres de los componentes son\n${nombrecomponentes}\ndime los nombres de los componentes  para el presupuesto (separados por por coma ",")`
       );
-     let result= presupuestoPC(nombresdeloscompo, ventas);
+      result= presupuestoPC(nombresdeloscompo, ventas);
 
      console.log(`el presupuesto con las piezas ${nombresdeloscompo} \n tiene un precio final de ${result}`);
       break;
 
     case "5":
+      let nombretotalvendedor=prompt(
+        `los nombres de los vendedores son:\n${nombrevendedores}\ndime el nombre del vendedor`
+      );
+       result= ventasTotalesVendedore(nombretotalvendedor,ventas);
 
       break;
 

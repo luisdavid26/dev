@@ -51,7 +51,7 @@ function cantidadVentasComponente(nomcomponenteusu, componente) {
       contadorcompo++;
     }
   });
-  console.log(`${contadorcompo}`);
+return contadorcompo;
 }
 
 function presupuestoPC(componentesusu, ventas) {
@@ -78,24 +78,24 @@ function presupuestoPC(componentesusu, ventas) {
     }
   });
   return totalpres;
-
-  console.log(`Presupuesto total: $${totalpres}`);
 }
 
-function ventasTotalesVendedore(ventatotalusu, ventas) {
-  console.log(`ventas :${vendedores}:`);
+function ventasTotalesVendedore(nomvendedores, ventas) {
+  let totalpricompo=0;
+  console.log(`ventas :${nomvendedores}:`);
   console.log(`------------------------------------------`);
-  try {
-    ventas.detalle.forEach((detalle) => {
-      //recorremos le array para encontrar las ventas que tengan el mismo nombre de vendedor del que a puesto el ususario
-      if ((ventatotalusu = detalle.nombreVendedore)) {
-        let dia = detalle.fecha.getDay(); //recogemos el dia
-        let mes = detalle.fecha.getMonth(); //recogemos el mes
-        let anyo = detalle.fecha.getFullYear(); //recogemos el anyo
-        console.log(`${dia}/${mes}/${anyo} : ${detalle.componentesPC}}`); //mostramos la venta con la fecha formateada y los compomentes del pc que tenia la venta
-      }
+  //try {//recorrer el total de vendedores
+    nomvendedores=nomvendedores.trim();
+    let ventasdelvendedor= ventasVendedores(nomvendedores,ventas);
+    console.log(`nombre del vendedor antes de pasarle al for each ${ventasdelvendedor},componentes${ventasdelvendedor[0].componentesPC}`)
+        
+   ventasdelvendedor.forEach(element => {
+    let elementocompo=element.componentesPC.join(",");
+    console.log(`elementocompo: ${elementocompo}`)
+       totalpricompo=presupuestoPC(elementocompo,ventas);
     });
-  } catch (error) {
-    console.error(`a ocurrido un error`); //si ocurre un error lo manejamos con el try catch
-  }
+    console.log(totalpricompo);
+  //} catch (error) {
+  //  console.error(`a ocurrido un error`); //si ocurre un error lo manejamos con el try catch
+  //}
 }
