@@ -1,6 +1,4 @@
 function ventasVendedores(nomventausu, ventas) {
-  console.log(`Ventas del vendedor: ${nomventausu}`);
-  console.log(`------------------------------------------`);
   try {
     // Filtrar las ventas del vendedor especificado
     let ventasVendedor = ventas.detalle.filter(
@@ -51,16 +49,13 @@ function cantidadVentasComponente(nomcomponenteusu, componente) {
       contadorcompo++;
     }
   });
-  console.log(`${contadorcompo}`);
+  return contadorcompo;
 }
 
 function presupuestoPC(componentesusu, ventas) {
   let totalpres = 0;
   // Usa la propiedad correcta "precios"
   let arrventasprecio = ventas.precios;
-  console.log(`Presupuesto del PC: ${componentesusu}`);
-  console.log(`------------------------------------------`);
-
   // Convertir la cadena de componentes en un array
   let arrcompousu = componentesusu.split(",");
 
@@ -77,24 +72,25 @@ function presupuestoPC(componentesusu, ventas) {
       console.log(`Componente no encontrado: ${componente}`);
     }
   });
-  return totalpres;
+  console.log(`el total de una venta es: ${totalpres}`);
 
-  console.log(`Presupuesto total: $${totalpres}`);
+  return totalpres;
 }
 
-function ventasTotalesVendedore(ventatotalusu, ventas) {
-  console.log(`ventas :${vendedores}:`);
-  console.log(`------------------------------------------`);
+function ventasTotalesVendedore(nomvendedores, ventas) {
+  let totalpreciovendedor = 0;
+  let totalpricompo = 0;
   try {
-    ventas.detalle.forEach((detalle) => {
-      //recorremos le array para encontrar las ventas que tengan el mismo nombre de vendedor del que a puesto el ususario
-      if ((ventatotalusu = detalle.nombreVendedore)) {
-        let dia = detalle.fecha.getDay(); //recogemos el dia
-        let mes = detalle.fecha.getMonth(); //recogemos el mes
-        let anyo = detalle.fecha.getFullYear(); //recogemos el anyo
-        console.log(`${dia}/${mes}/${anyo} : ${detalle.componentesPC}}`); //mostramos la venta con la fecha formateada y los compomentes del pc que tenia la venta
-      }
+    //recorrer el total de vendedores
+    nomvendedores = nomvendedores.trim();
+    let ventasdelvendedor = ventasVendedores(nomvendedores, ventas);
+    ventasdelvendedor.forEach((element) => {
+      let elementocompo = element.componentesPC.join(",");
+      console.log(`elementocompo: ${elementocompo}`);
+      totalpricompo = presupuestoPC(elementocompo, ventas);
+      totalpreciovendedor += totalpricompo;
     });
+    return totalpreciovendedor;
   } catch (error) {
     console.error(`a ocurrido un error`); //si ocurre un error lo manejamos con el try catch
   }

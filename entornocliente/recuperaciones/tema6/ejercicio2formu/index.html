@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ejercicio2</title>
+    <script src="function.js" defer></script>
+    <style>
+      .error {
+        color: red;
+      }
+
+      input:invalid {
+        border: 2px dashed red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="formulario" novalidate>
+      <label>Nombre</label>
+      <input
+        required
+        type="text"
+        id="nombre"
+        placeholder="Escribre tu nombre"
+      />
+      <br />
+      <br />
+
+      <label>Apellidos</label>
+      <input
+        required
+        type="text"
+        id="apellidos"
+        placeholder="Escribre tu apellido"
+      />
+      <br />
+      <br />
+
+      <label>Edad</label>
+      <input
+        type="number"
+        id="edad"
+        required
+        minlength="0"
+        maxlength="105"
+        placeholder="Escribre tu edad"
+      />
+      <span class="error"></span>
+      <br />
+      <br />
+
+      <label>NIF</label>
+      <input required type="text" id="NIF" placeholder="Escribre tu NIF" />
+      <br /><br />
+
+      <label>Email</label>
+      <input
+        required
+        type="email"
+        id="email"
+        placeholder="Escribre tu Email"
+      /><br />
+      <br />
+      <br />
+      <label>selecciona una provincia</label>
+      <select name="provincias" placeholder="Selecciona una provincia">
+        <option value="nada">sin seleccion</option>
+        <option value="alicante">Alicante</option>
+        <option value="valencia">Valencia</option>
+        <option value="castelon">Castellon/option></option>
+      </select>
+
+      <br />
+      <label>selecciona un sexo</label>
+      <br />
+      <label>hombre</label>
+      <input type="radio" name="sexo" id="sexo" value="hombre" /><br />
+      <label>mujer</label>
+      <input type="radio" name="sexo" id="sexo" value="mujer" />
+      <br />
+      <label>escribe una fecha</label>
+      <input type="text"  id="fecha" placeholder="dia,mes y anyo"/>
+      <br />
+      <br />
+      <br />
+      <button type="submit">Enviar</button>
+      <br />
+      <div id="errores" class="error"></div>
+    </form>
+  </body>
+</html>

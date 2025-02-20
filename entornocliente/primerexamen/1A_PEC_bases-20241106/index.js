@@ -1,7 +1,7 @@
 let menu = true;
 let nombrevendedores;
 let nombresucursales;
-let nombrecomponente=[];
+let nombrecomponente = [];
 while (menu) {
   ventas.vendedores.forEach((element) => {
     nombrevendedores = ventas.vendedores.join("\n");
@@ -12,7 +12,7 @@ while (menu) {
   ventas.detalle.forEach((element) => {
     nombrecomponente = nombrecomponente.concat(element.componentesPC); // Concatenar los componentes
   });
-  
+
   let nombrecomponentes = nombrecomponente.join("\n");
 
   var opcion = prompt(
@@ -27,7 +27,8 @@ while (menu) {
       if (ventas.vendedores.includes(nomvendusu)) {
         let resultado = ventasVendedores(nomvendusu, ventas);
         if (resultado && resultado.length > 0) {
-          console.log(`Las ventas por vendedor han sido:`);
+          console.log(`Ventas del vendedor: ${nomvendusu}`);
+          console.log(`------------------------------------------`);
           resultado.forEach((venta) => {
             console.log(
               `Fecha: ${venta.fecha.toLocaleDateString()}, Componentes: ${
@@ -58,21 +59,36 @@ while (menu) {
       let nomcompousu = prompt(
         `los nombres de los componentes son\n${nombrecomponentes}\ndime el nombre del componente por la que quieres buscar`
       );
-      cantidadVentasComponente(nomcompousu, ventas.vendedores);
+      let resultcompo = cantidadVentasComponente(
+        nomcompousu,
+        ventas.vendedores
+      );
+      console.log(`Presupuesto del PC: ${nombrecomponentes}`);
+      console.log(`------------------------------------------`);
+      console.log(
+        `el componente se a vendido este nuemero de veces: ${resultcompo}`
+      );
       break;
 
     case "4":
       let nombresdeloscompo = prompt(
-        
         `los nombres de los componentes son\n${nombrecomponentes}\ndime los nombres de los componentes  para el presupuesto (separados por por coma ",")`
       );
-     let result= presupuestoPC(nombresdeloscompo, ventas);
+      result = presupuestoPC(nombresdeloscompo, ventas);
 
-     console.log(`el presupuesto con las piezas ${nombresdeloscompo} \n tiene un precio final de ${result}`);
+      console.log(
+        `el presupuesto con las piezas ${nombresdeloscompo} \n tiene un precio final de ${result}`
+      );
       break;
 
     case "5":
-
+      let nombretotalvendedor = prompt(
+        `los nombres de los vendedores son:\n${nombrevendedores}\ndime el nombre del vendedor`
+      );
+      console.log(`ventas totales del vendedor: ${nombretotalvendedor}:`);
+      console.log(`------------------------------------------`);
+      result = ventasTotalesVendedore(nombretotalvendedor, ventas);
+      console.log(`las ventas totales han sido: ${result} euros`);
       break;
 
     case "6":
