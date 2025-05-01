@@ -18,7 +18,7 @@ async function postPerson(person) {
     if (resp.status !== 204) {
       const json = resp.json();
       console.log(json);
-      form.reset();
+      form.reset();0
       window.location.href = "index.html";
     }
   } catch (error) {
