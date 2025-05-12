@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir receta</title>
+    <!-- Bootstrap CSS (local) -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="src/add-recipe.js"></script>
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <a class="navbar-brand" href="add-recipe.html">Añadir Receta</a>
+    </nav>    
+    <div class="container mt-5">
+        <h1 class="text-center">Añadir Nueva Receta</h1>
+        <form id="recipeForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre de la Receta</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="ingredients" class="form-label">Ingredientes (separados por comas)</label>
+                <input type="text" class="form-control" id="ingredients" required>
+            </div>
+            <div class="mb-3">
+                <label for="prepTime" class="form-label">Tiempo de Preparación (minutos)</label>
+                <input type="number" class="form-control" id="prepTime" required>
+            </div>
+            <div class="mb-3">
+                <label for="difficulty" class="form-label">Dificultad</label>
+                <select class="form-control" id="difficulty" required>
+                    <option value="Fácil">Fácil</option>
+                    <option value="Media">Media</option>
+                    <option value="Difícil">Difícil</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Categoría</label>
+                <select class="form-control" id="category" required>
+                    <option value="Entrante">Entrante</option>
+                    <option value="Plato Principal">Plato Principal</option>
+                    <option value="Postre">Postre</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Descripción</label>
+                <textarea class="form-control" id="description" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Receta</button>
+        </form>
+    </div>
+</body>
+</html>
