@@ -30,7 +30,7 @@ while (terminar != true) {
     let result6 = porcentajeEmpleadosPorSeniority(empleados);
     console.log(result6);
   } else if (respuesta == 7) {
-    let result7=calculoCostosEmpresa(empleados);
+    let result7 = calculoCostosEmpresa(empleados);
     console.log(result7);
   }
 }
@@ -48,13 +48,17 @@ function empleadosDeGuardiaPorPais(empleados) {
   return resultado;
 }
 
-function topNEmpleadosConMayorSueldo(empleados, N) {
-  if (!Number.isInteger(N) || N <= 0 || N > 100) {
+function topNEmpleadosConMayorSueldo(empleados, numerousuario) {
+  if (
+    !Number.isInteger(numerousuario) ||
+    numerousuario <= 0 ||
+    numerousuario > 100
+  ) {
     return "el numero ingresado es mayor que el numero de usuarios";
   }
   let copyarr = [...empleados];
   let ordenado = copyarr.sort((a, b) => b.sueldo - a.sueldo);
-  return ordenado.slice(0, N);
+  return ordenado.slice(0, numerousuario);
 }
 
 function empleadosConLenguajeEspecifico(minleng, reqleng, empleados) {
@@ -107,17 +111,19 @@ function porcentajeEmpleadosPorSeniority(empleados) {
     Senior: senior,
   };
 }
-function calculoCostosEmpresa(empleados){
- let copyarr=[...empleados];
- let resultbruto=copyarr.reduce((acumulador,empleado)=>acumulador+empleado.sueldo,0);
- let Tobrasoc= resultbruto*0.03;
- let Tjub=resultbruto*0.11;
- let TSueldoNet=resultbruto-(Tobrasoc+Tjub);
- return{
-  Sueldobruto:resultbruto,
-  Totalobrasocial:Tobrasoc,
-  Totaljubilacion:Tjub,
-  TotalSueldoNeto:TSueldoNet,
- };
-
+function calculoCostosEmpresa(empleados) {
+  let copyarr = [...empleados];
+  let resultbruto = copyarr.reduce(
+    (acumulador, empleado) => acumulador + empleado.sueldo,
+    0
+  );
+  let Tobrasoc = resultbruto * 0.03;
+  let Tjub = resultbruto * 0.11;
+  let TSueldoNet = resultbruto - (Tobrasoc + Tjub);
+  return {
+    Sueldobruto: resultbruto,
+    Totalobrasocial: Tobrasoc,
+    Totaljubilacion: Tjub,
+    TotalSueldoNeto: TSueldoNet,
+  };
 }
